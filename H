@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VHSL Picks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+    header {
+      background: #020617;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .container {
+      padding: 30px;
+    }
+    input, button {
+      width: 90%;
+      max-width: 320px;
+      padding: 12px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: #22c55e;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #16a34a;
+    }
+    .hidden {
+      display: none;
+    }
+    .card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>VHSL PICKS</header>
+
+<div class="container">
+
+  <!-- LOGIN -->
+  <div id="login" class="card">
+    <h2>Admin Login</h2>
+    <input id="password" type="password" placeholder="Admin Password" />
+    <button onclick="login()">Login</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="card hidden">
+    <h2>Admin Dashboard</h2>
+    <p>Site is LIVE ✅</p>
+    <p>Total Users: <b>0</b></p>
+    <p>Total Balance: <b>$0.00</b></p>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+</div>
+
+<script>
+  const ADMIN_PASSWORD = "eHw61010@@";
+
+  function login() {
+    const pass = document.getElementById("password").value;
+    if (pass === ADMIN_PASSWORD) {
+      document.getElementById("login").classList.add("hidden");
+      document.getElementById("dashboard").classList.remove("hidden");
+    } else {
+      document.getElementById("error").innerText = "Wrong password";
+    }
+  }
+
+  function logout() {
+    document.getElementById("dashboard").classList.add("hidden");
+    document.getElementById("login").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
