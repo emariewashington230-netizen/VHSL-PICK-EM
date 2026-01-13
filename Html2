@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>VHSL PICKS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<h1>VHSL PICKS</h1>
+
+<div id="auth">
+  <button onclick="netlifyIdentity.open()">Login / Sign Up</button>
+</div>
+
+<p id="userInfo"></p>
+
+<hr>
+
+<div id="userArea" style="display:none;">
+  <h2>User Area</h2>
+  <input id="pickInput" placeholder="Enter pick">
+  <button onclick="addPick()">Add Pick</button>
+  <ul id="pickList"></ul>
+</div>
+
+<hr>
+
+<div id="adminPanel" style="display:none;">
+  <h2>ADMIN DASHBOARD</h2>
+  <button onclick="toggleLock()">Lock / Unlock Picks</button><br><br>
+  <button onclick="resetAll()" style="background:red;color:white;">RESET SYSTEM</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
